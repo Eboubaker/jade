@@ -1,0 +1,29 @@
+plugins {
+    id 'java'
+}
+
+group 'org.example'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+    maven {
+        url "https://jitpack.io"
+    }
+}
+
+dependencies {
+    implementation 'org.jetbrains:annotations:24.0.0'
+    implementation 'com.gitlab.jade-project:jade:master-SNAPSHOT'
+    compileOnly 'org.projectlombok:lombok:1.18.26'
+    annotationProcessor("org.projectlombok:lombok:1.18.26")
+    implementation("org.projectlombok:lombok:1.18.26")
+    implementation 'org.xerial:sqlite-jdbc:3.44.1.0'
+}
+compileJava {
+    options.compilerArgs << "-Xlint:all,-processing" // Optional: Suppresses Lombok-related warnings
+}
+test {
+    useJUnitPlatform()
+}
+

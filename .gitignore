@@ -1,0 +1,5 @@
+build/
+.gradle/
+MTPs-*.txt
+APDescription.txt
+
